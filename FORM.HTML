@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 10px;
+            padding: 10px;
+        }
+        form{
+            background-color: blue;
+            color:black;
+            width: 60%;
+            border-radius: 10px;
+        }
+        label{
+            display: inline-block;
+            margin-left: 1cm;
+            height: 80px;
+            font-size: 30px;
+            width: 120px;
+        }
+        input{
+            height: 30px;
+            margin-top: 10px;
+            border-color: green;
+        }
+        .sub{
+            margin-left: 2cm;
+            background-color:rgb(43, 134, 226);
+        }
+        legend{
+            font-size: 30px;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function data()
+        {
+            var a = document.getElementById("id1").value;
+            var b = document.getElementById("id2").value;
+            var c = document.getElementById("id3").value;
+            var d = document.getElementById("id4").value;
+
+            if (a == "" || b == "" || c == "" || d == "") {
+                alert("Please fill all fields.");
+                return false;
+            } else if (b.length != 10) {
+                alert("Please enter a 10-digit contact number.");
+                return false;
+            } else if (isNaN(b)) {
+                alert("Please enter only numbers for the contact.");
+                return false;
+            } else if (c != d) {
+                alert("Password and confirm password do not match.");
+                return false;
+            } else {
+                return true;
+            }
+           
+        }
+    </script>
+    <form onsubmit="return data" action="abc.html">
+        <fieldset>
+            <legend>submit your form</legend>
+            <label>UserId</label><input type="text" placeholder="Enter your user name" id="id1">
+            <label>contact</label><input type="text" placeholder="Enter your user name" id="id2">
+            <label>password</label><input type="password" placeholder="Enter your  password" id="id3">
+            <label>comfirm password</label><input type="password" placeholder="Enter your confirm password" id="id4">
+            <input type="submit" value="submit" class="sub">
+        </fieldset>
+    </form>
+    
+</body>
+</html>
